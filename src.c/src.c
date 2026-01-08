@@ -3,7 +3,7 @@
 
 #define PI 3.141592653589793
 
-char isim[500];
+char isim[501];
 
 const char *gezegenler[8] = {
         "Merkur ", "Venus  ", "Dunya  ", "Mars   ", "Jupiter", "Saturn ", "Uranus ", "Neptun "
@@ -11,7 +11,7 @@ const char *gezegenler[8] = {
 
 double gravity[8] = {3.70, 8.87, 9.81, 3.71, 24.79, 10.44, 8.69, 11.15};
 
-double abs_with_warn(double x) {
+double negatif_deger_uyarisi(double x) {
     if (x < 0) {
         printf("Uyari: Negatif deger girildi; ternary operatoru ile mutlak deger aliniyor.\n");
     }
@@ -42,7 +42,7 @@ void serbest_dusme(double *g) {
     double t;
     printf("Sure (saniye): ");
     scanf("%lf", &t);
-    t = abs_with_warn(t);
+    t = negatif_deger_uyarisi(t);
 
     for (int i = 0; i < 8; i++) {
         double h = 0.5 * (*(g + i)) * t * t;
@@ -54,7 +54,7 @@ void yukari_atis(double *g) {
     double v0;
     printf("Baslangic hizi (m/s): ");
     scanf("%lf", &v0);
-    v0 = abs_with_warn(v0);
+    v0 = negatif_deger_uyarisi(v0);
 
     for (int i = 0; i < 8; i++) {
         double hmax = (v0 * v0) / (2 * *(g + i));
@@ -66,7 +66,7 @@ void agirlik(double *g) {
     double m;
     printf("Kutle (kg): ");
     scanf("%lf", &m);
-    m = abs_with_warn(m);
+    m = negatif_deger_uyarisi(m);
 
     for (int i = 0; i < 8; i++)
         printf("%s -> Agirlik: %.2f N\n", gezegenler[i], m * *(g + i));
@@ -79,8 +79,8 @@ void potansiyel_enerji(double *g) {
     printf("Yukseklik (m): ");
     scanf("%lf", &h);
 
-    m = abs_with_warn(m);
-    h = abs_with_warn(h);
+    m = negatif_deger_uyarisi(m);
+    h = negatif_deger_uyarisi(h);
 
     for (int i = 0; i < 8; i++)
         printf("%s -> Ep: %.2f J\n", gezegenler[i], m * *(g + i) * h);
@@ -93,8 +93,8 @@ void hidrostatik_basinc(double *g) {
     printf("Derinlik (m): ");
     scanf("%lf", &h);
 
-    rho = abs_with_warn(rho);
-    h = abs_with_warn(h);
+    rho = negatif_deger_uyarisi(rho);
+    h = negatif_deger_uyarisi(h);
 
     for (int i = 0; i < 8; i++)
         printf("%s -> Basinc: %.2f Pa\n", gezegenler[i], rho * *(g + i) * h);
@@ -107,8 +107,8 @@ void arsimet(double *g) {
     printf("Batan hacim (m^3): ");
     scanf("%lf", &V);
 
-    rho = abs_with_warn(rho);
-    V = abs_with_warn(V);
+    rho = negatif_deger_uyarisi(rho);
+    V = negatif_deger_uyarisi(V);
 
     for (int i = 0; i < 8; i++)
         printf("%s -> Kaldirma Kuvveti: %.2f N\n", gezegenler[i], rho * *(g + i) * V);
@@ -118,7 +118,7 @@ void basit_sarkac(double *g) {
     double L;
     printf("Ip uzunlugu (m): ");
     scanf("%lf", &L);
-    L = abs_with_warn(L);
+    L = negatif_deger_uyarisi(L);
 
     for (int i = 0; i < 8; i++) {
         double T = 2 * PI * sqrt(L / *(g + i));
@@ -130,7 +130,7 @@ void ip_gerilmesi(double *g) {
     double m;
     printf("Kutle (kg): ");
     scanf("%lf", &m);
-    m = abs_with_warn(m);
+    m = negatif_deger_uyarisi(m);
 
     for (int i = 0; i < 8; i++)
         printf("%s -> Ip gerilmesi: %.2f N\n", gezegenler[i], m * *(g + i));
@@ -143,7 +143,7 @@ void asansor(double *g) {
     printf("Asansor ivmesi (m/s^2): ");
     scanf("%lf", &a);
 
-    m = abs_with_warn(m);
+    m = negatif_deger_uyarisi(m);
 
     for (int i = 0; i < 8; i++) {
         double N = a >= 0 ? m * (*(g + i) + a) : m * (*(g + i) - (-a));
