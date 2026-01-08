@@ -8,6 +8,10 @@ Fakülte / Bölüm : Mühendislik ve Doğa Bilimleri Fakültesi / Bilgisayar Mü
 
 Sınıf : Lisans 1. Yıl
 
-Açıklama: Algoritma labarotuvar dersi kapsamında bizden istenen c kodu ve kodu açıklayan bir rapor bulunmaktadır.                                                                                                                Algoritma src.c, rapor ise Rapor adlı klasörde bulunmaktadır.
+Algoritma Laboratuvarı dersi kapsamında hazırlanan bu çalışmada, C programlama dili kullanılarak geliştirilen bir algoritma ve bu algoritmayı ayrıntılı biçimde açıklayan bir rapor sunulmaktadır. Algoritmaya ait kaynak kodu Algoritma/src.c dosyasında, rapor ise Rapor adlı klasörde yer almaktadır.
 
-Kısaca algoritmadan bahsedersek: Ödev kapsamında bizden istenen algoritmada program kullanıcıdan isim ister, isim girildikten sonra kullanıcıya birbirinden farklı 9 deney gösterilir ve bu deneylerden birini seçmesi istenir. Seçim sonucunda o deneye ait gerekli parametreler kullanıcıdan istenir, daha sonra bu parametreler kullanılarak her deneyin güneş sistemimizdeki farklı gezegenlerdeki sonuçlarını program kullanıcıya gösterir bunu ise her deneyde yer çekimi ivmesi ile sağlar. Algoritma yazılırken kullanıcıdan alınan verilerin doğruluğu, hata kodları veya güvenlik algoritmaları da aynı şekilde algoritma içerisinde yer alacaktır.
+Geliştirilen programın temel amacı, kullanıcı etkileşimli bir yapı üzerinden fizik temelli hesaplamalar gerçekleştirmektir. Program başlangıçta kullanıcıdan adını talep eder. Ardından kullanıcıya birbirinden farklı dokuz adet deney sunulur ve bu deneylerden birini seçmesi istenir. Kullanıcının yaptığı seçime bağlı olarak, ilgili deneye ait gerekli parametreler kullanıcıdan alınır.
+
+Girilen parametreler doğrultusunda program, seçilen deneyin sonuçlarını Güneş Sistemi’nde yer alan farklı gezegenler için hesaplayarak kullanıcıya sunar. Bu hesaplamalarda, her gezegene ait yer çekimi ivmesi değerleri dikkate alınmaktadır. Ayrıca algoritma içerisinde, kullanıcıdan alınan verilerin doğruluğunu kontrol eden mekanizmalar, olası hatalara karşı hata kodları ve temel güvenlik önlemleri de yer almaktadır.
+
+Bu çalışma, hem algoritma geliştirme sürecini hem de kullanıcıdan alınan verilerle dinamik hesaplamalar yapılmasını amaçlayan kapsamlı bir örnek sunmaktadır.
